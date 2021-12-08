@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/x-icon" href="./swap.png">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>DEX-BOT</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <img src="./swap.png" id="img" class="navbar-brand" href="#">My DEX</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              
+              
+            </ul>
+            <form class="d-flex">
+        
+                <button class="btn btn-outline-primary" id="btn-login" type="submit">sign in to metamask</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+
+        <div class="row">
+            <div class="col col-md-6 offset-md-3" id="window">
+                <h4>swap</h4>
+                <div id="form">
+                    <div class="swapbox">                        
+                        <div class="swapbox_select token_select" id="from_token_select">convert from
+                            <img id="from_token_image" class="token_image">
+                            <span id="from_token_text"></span>                            
+
+                        </div>
+                        <div class="swapbox_select">
+                            <input class="number form-control" placeholder="amount" id="from_amount">
+                        </div>
+
+                    </div>
+
+                    <div class="swapbox">
+                        
+                        <div class="swapbox_select token_select" id="to_token_select">convert to
+                            <img id="to_token_image" class="token_image">
+                            <span id="to_token_text"></span>
+
+                        </div>
+                        <div class="swapbox_select">
+                            <input class="number form-control" placeholder="amount" id="to_amount">
+                        </div>
+
+                    </div>
+
+                    <div >Estimated Gas Fee: <span id="gas_estimate"></span></div>
+                        
+                    </div>
+
+                    <button disabled class="btn btn-large btn-primary btn-block" id="swap_button">swap</button>
+
+                </div>
+            </div>
+        </div>
+
+
+      </div>
+
+      <div class="modal" id="token_modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">select token</h5>
+              <button type="button" id="modal_close" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div id="token_list">
+
+              </div>
+            </div>
+            <div class="modal-footer">
+
+             </div>
+          </div>
+        </div>
+      </div>
+    
+    <script type="text/javascript" src="./main.js"></script>
+  </body>
+</html>
